@@ -1,0 +1,30 @@
+make_heap(begin, end);      // Creates a Max Heap
+push_heap(begin, end);      // Push after adding an element
+pop_heap(begin, end);       // Moves max to the end
+sort_heap(begin, end);      // Heap Sort
+ 
+
+min heap:
+priority_queue<int, vector<int>, greater<int>> pq;
+max heap:
+priority_queue<int> pq; 
+
+############################PRIORITY_QUEUE CONCEPT #######################################
+priority_queue<T, vector<T>, Compare> pq;
+
+T → What is stored in the heap.
+vector<T> → The underlying container used to hold the heap elements.
+Compare → The rule that decides which element has higher priority (which element comes to the top).
+lets say: T=ListNode
+
+this is how compare will work:
+class Compare {
+public:
+    bool operator()(ListNode* a, ListNode* b) {
+        return a->val > b->val;   // Min Heap
+    }
+};
+operator()--->operator overloading (tells as what happens when the operator is called as function
+just like we define operator+)
+now lets say we have(comp(1,5))--->so 1>b is false so the 1 comes on top and 5 is placed after words
+now(comp(1,8))----->1 stays on top and 8 is placed on the end of the heap and this is the formation of mean heap.
